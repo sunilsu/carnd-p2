@@ -19,6 +19,7 @@ The goals / steps of this project are the following:
 [pp1]: ./images/pp1.png "Preprocessing"
 [pp2]: ./images/pp2.png "Preprocessing"
 [download]: ./images/web_downloaded.png "Test Images from Web"
+[hist_web]: ./images/hist_web_img.png "Histograms"
 [featuremap1]: ./images/featuremaps1.png "Featuremaps"
 [featuremap]: ./images/featuremaps.png "Featuremaps"
 [featuremap3]: ./images/featuremaps3.png "Featuremaps"
@@ -154,9 +155,16 @@ Here are five German traffic signs that I found on the web:
 
 ![Web Images][download]
 
+Here are the histograms of their intenesity
+
+![Histogram][hist_web]
+
+
 #### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. Identify where in your code predictions were made. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
 The code for making predictions on my final model is located in the **Test Model on New Images** section of the Ipython notebook.
+
+Looking at the histograms of the 5 web images, the 2nd image (Right of way) is on the bright side, while the 4th image (30 km/h is on the darker side). Also the 50 km/h sign is much smaller with lot of background information. I would guess that the model would probably not do well on the 4th and 5th images.
 
 Here are the results of the prediction:
 
@@ -169,7 +177,8 @@ Here are the results of the prediction:
 | Speed limit (50km/h) | Speed limit (50km/h)	|
 
 
-The model was able to correctly guess 5 of the 5 traffic signs, which gives an accuracy of 100%. This compares favorably to the accuracy on the test set of 94.8%
+The model was able to correctly guess 5 of the 5 traffic signs, which gives an accuracy of 100%. This compares favorably to the accuracy on the test set of 94.8%.
+
 
 #### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction and identify where in your code softmax probabilities were outputted. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
@@ -206,7 +215,7 @@ For the third image ...
 | .00	      			| Priority road |
 | .00				    | No entry |
 
-For the fourth image ...
+For the fourth image. model is not as certain as others, but still good.
 
 | Probability         	|     Prediction	        					|
 |:---------------------:|:---------------------------------------------:|
@@ -216,7 +225,7 @@ For the fourth image ...
 | .02	      			| Speed limit (60km/h) |
 | .01				    | Speed limit (20km/h) |
 
-For the fifth image ...
+For the fifth image, model uncertainity is higher as compared to other images.
 
 | Probability         	|     Prediction	        					|
 |:---------------------:|:---------------------------------------------:|
